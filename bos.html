@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper 3D Slider</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,-25"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <nav class="navbar navbar-expand-md navbar-light navbar-sticky"
+         style="background-color: rgb(5 5 5 / 10%); background-image: url(assets/images/slider1.jpg); background-blend-mode: multiply;">
+        <a class="navbar-brand " href="#">
+            <img src="assets/images/logo-white.png" alt="Brand Logo">
+        </a>
+        <div class="top-search-container">
+            <input type="text" placeholder="Ara...">
+            <a href="#" type="button">
+            <span class="material-symbols-outlined">
+search
+</span>
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+            <path fill="none" stroke="#D3D1D1FF" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10"
+                  d="M4 7h22M4 15h22M4 23h22"/>
+        </svg>
+        </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <button class="close-btn">&times;</button>
+            <ul class="navbar-nav top-menu-category">
+                <li><a href="#" id="kadin">KADIN</a></li>
+                <li><a href="#" id="erkek">ERKEK</a></li>
+                <li>ÇOCUK</li>
+                <li>SUMMER</li>
+                <li>WINTER</li>
+            </ul>
+            <ul class="navbar-nav top-menu-sub-category" id="kadinAlt">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Abiye</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Elbise</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Etek</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav  top-menu-sub-category" id="erkekAlt">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pantolon</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Takım Elbise</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Gömlek</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="overlay"></div>
+
+    <div class="container" style="margin-top: 100px;">
+        <div class="row products-wrapper">
+            <div class="col-12"> İÇERİK SAYFASI </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="row products-wrapper">
+                <div class="col-md-12 px-unset" style="text-align: left !important;">
+                    <span>ŞUNLARI DA BEĞENEBİLİRSİNİZ</span></div>
+                <div class="col-xl-2 col-md-3 col-sm-6 card-wrapper px-unset " style="margin-right: -1px;">
+                    <div class="card radius-unset border-1" style="width: 100%; position: relative;">
+                        <img src="assets/images/product-1.jpg" class="card-img-top radius-unset" alt="...">
+                        <span class="material-symbols-outlined add-icon">add</span>
+                        <div class="sizeTable" style="display: none;">
+                            <ul class="size-list">
+                                <li class="size-li" style="margin-right: -1px;"
+                                    onclick="openCartPanel('145 $','assets/images/product-1.jpg','Ürün Başlığı','S')"><a
+                                        href="#">S</a></li>
+                                <li class="size-li"><a href="#"
+                                                       onclick="openCartPanel('145 $','assets/images/product-1.jpg','Ürün Başlığı','M')">M</a>
+                                </li>
+                                <li class="size-li" style="margin-right: -1px;"
+                                    onclick="openCartPanel('145 $','assets/images/product-1.jpg','Ürün Başlığı','L')"><a
+                                        href="#">L</a></li>
+                                <li class="size-li"><a href="#"
+                                                       onclick="openCartPanel('145 $','assets/images/product-1.jpg','Ürün Başlığı','XL')">XL</a>
+                                </li>
+                            </ul>
+                            <ul class="size-standart">
+                                <li>
+                                    BEDEN KILAVUZU
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body"
+                             style="padding-top: 0px; padding-bottom: 25px; font-size: 12px; border-top: 1px solid black;">
+                            <div class="row">
+                                <div class="col-12 d-flex align-items-center justify-content-between">
+                                    <a href="#" class="card-text mr-2 product-title">Ürün Başlık</a>
+                                    <span class="material-symbols-outlined" style="font-size: 20px;">bookmark</span>
+                                </div>
+                                <div class="col-12 d-flex align-items-center justify-content-between">
+                                    <p class="card-text mr-2 product-title">145$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-3 col-sm-6 card-wrapper px-unset"  style="margin-right: -1px;">
+                    <div class="card radius-unset border-1" style="width: 100%; position: relative;">
+                        <img src="assets/images/product-2.jpg" class="card-img-top radius-unset" alt="...">
+                        <span class="material-symbols-outlined add-icon">add</span>
+                        <div class="sizeTable" style="display: none;">
+                            <ul class="size-list">
+                                <li class="size-li" style="margin-right: -1px;"
+                                    onclick="openCartPanel('150 $','assets/images/product-2.jpg','Ürün Başlığı','S')"><a
+                                        href="#">S</a></li>
+                                <li class="size-li"><a href="#"
+                                                       onclick="openCartPanel('150 $','assets/images/product-2.jpg','Ürün Başlığı','M')">M</a>
+                                </li>
+                                <li class="size-li" style="margin-right: -1px;"
+                                    onclick="openCartPanel('150 $','assets/images/product-2.jpg','Ürün Başlığı','L')"><a
+                                        href="#">L</a></li>
+                                <li class="size-li"><a href="#"
+                                                       onclick="openCartPanel('150 $','assets/images/product-2.jpg','Ürün Başlığı','XL')">XL</a>
+                                </li>
+                            </ul>
+                            <ul class="size-standart">
+                                <li>
+                                    BEDEN KILAVUZU
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body"
+                             style="padding-top: 0px; padding-bottom: 25px; font-size: 12px; border-top: 1px solid black;">
+                            <div class="row">
+                                <div class="col-12 d-flex align-items-center justify-content-between">
+                                    <a href="#" class="card-text mr-2 product-title">Ürün Başlık</a>
+                                    <span class="material-symbols-outlined" style="font-size: 20px;">bookmark</span>
+                                </div>
+                                <div class="col-12 d-flex align-items-center justify-content-between">
+                                    <p class="card-text mr-2 product-title">150$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-3 col-sm-6 card-wrapper px-unset"  style="margin-right: -1px;">
+                    <div class="card radius-unset border-1" style="width: 100%; position: relative;">
+                        <img src="assets/images/product-1.jpg" class="card-img-top radius-unset" alt="...">
+                        <span class="material-symbols-outlined add-icon">add</span>
+                        <div class="sizeTable" style="display: none;">
+                            <ul class="size-list">
+                                <li class="size-li" style="margin-right: -1px;"
+                                    onclick="openCartPanel('145 $','assets/images/product-1.jpg','Ürün Başlığı','S')"><a
+                                        href="#">S</a></li>
+                                <li class="size-li"><a href="#"
+                                                       onclick="openCartPanel('145 $','assets/images/product-1.jpg','Ürün Başlığı','M')">M</a>
+                                </li>
+                                <li class="size-li" style="margin-right: -1px;"
+                                    onclick="openCartPanel('145 $','assets/images/product-1.jpg','Ürün Başlığı','L')"><a
+                                        href="#">L</a></li>
+                                <li class="size-li"><a href="#"
+                                                       onclick="openCartPanel('145 $','assets/images/product-1.jpg','Ürün Başlığı','XL')">XL</a>
+                                </li>
+                            </ul>
+                            <ul class="size-standart">
+                                <li>
+                                    BEDEN KILAVUZU
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body"
+                             style="padding-top: 0px; padding-bottom: 25px; font-size: 12px; border-top: 1px solid black;">
+                            <div class="row">
+                                <div class="col-12 d-flex align-items-center justify-content-between">
+                                    <a href="#" class="card-text mr-2 product-title">Ürün Başlık</a>
+                                    <span class="material-symbols-outlined" style="font-size: 20px;">bookmark</span>
+                                </div>
+                                <div class="col-12 d-flex align-items-center justify-content-between">
+                                    <p class="card-text mr-2 product-title">145$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-3 col-sm-6 card-wrapper px-unset"  style="margin-right: -1px;">
+                    <div class="card radius-unset border-1" style="width: 100%; position: relative;">
+                        <img src="assets/images/product-3.jpg" class="card-img-top radius-unset" alt="...">
+                        <span class="material-symbols-outlined add-icon">add</span>
+                        <div class="sizeTable" style="display: none;">
+                            <ul class="size-list">
+                                <li class="size-li" style="margin-right: -1px;"
+                                    onclick="openCartPanel('95 $','assets/images/product-3.jpg','Ürün Başlığı','S')"><a
+                                        href="#">S</a></li>
+                                <li class="size-li"><a href="#"
+                                                       onclick="openCartPanel('95 $','assets/images/product-3.jpg','Ürün Başlığı','M')">M</a>
+                                </li>
+                                <li class="size-li" style="margin-right: -1px;"
+                                    onclick="openCartPanel('95 $','assets/images/product-3.jpg','Ürün Başlığı','L')"><a
+                                        href="#">L</a></li>
+                                <li class="size-li"><a href="#"
+                                                       onclick="openCartPanel('95 $','assets/images/product-3.jpg','Ürün Başlığı','XL')">XL</a>
+                                </li>
+                            </ul>
+                            <ul class="size-standart">
+                                <li>
+                                    BEDEN KILAVUZU
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body"
+                             style="padding-top: 0px; padding-bottom: 25px; font-size: 12px; border-top: 1px solid black;">
+                            <div class="row">
+                                <div class="col-12 d-flex align-items-center justify-content-between">
+                                    <a href="#" class="card-text mr-2 product-title">Ürün Başlık</a>
+                                    <span class="material-symbols-outlined" style="font-size: 20px;">bookmark</span>
+                                </div>
+                                <div class="col-12 d-flex align-items-center justify-content-between">
+                                    <p class="card-text mr-2 product-title">95$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-3 col-sm-6 card-wrapper px-unset"  style="margin-right: -1px;">
+                    <div class="card radius-unset border-1" style="width: 100%; position: relative;">
+                        <img src="assets/images/product-3.jpg" class="card-img-top radius-unset" alt="...">
+                        <span class="material-symbols-outlined add-icon">add</span>
+                        <div class="sizeTable" style="display: none;">
+                            <ul class="size-list">
+                                <li class="size-li" style="margin-right: -1px;"
+                                    onclick="openCartPanel('95 $','assets/images/product-3.jpg','Ürün Başlığı','S')"><a
+                                        href="#">S</a></li>
+                                <li class="size-li"><a href="#"
+                                                       onclick="openCartPanel('95 $','assets/images/product-3.jpg','Ürün Başlığı','M')">M</a>
+                                </li>
+                                <li class="size-li" style="margin-right: -1px;"
+                                    onclick="openCartPanel('95 $','assets/images/product-3.jpg','Ürün Başlığı','L')"><a
+                                        href="#">L</a></li>
+                                <li class="size-li"><a href="#"
+                                                       onclick="openCartPanel('95 $','assets/images/product-3.jpg','Ürün Başlığı','XL')">XL</a>
+                                </li>
+                            </ul>
+                            <ul class="size-standart">
+                                <li>
+                                    BEDEN KILAVUZU
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body"
+                             style="padding-top: 0px; padding-bottom: 25px; font-size: 12px; border-top: 1px solid black;">
+                            <div class="row">
+                                <div class="col-12 d-flex align-items-center justify-content-between">
+                                    <a href="#" class="card-text mr-2 product-title">Ürün Başlık</a>
+                                    <span class="material-symbols-outlined" style="font-size: 20px;">bookmark</span>
+                                </div>
+                                <div class="col-12 d-flex align-items-center justify-content-between">
+                                    <p class="card-text mr-2 product-title">95$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-3 col-sm-6 card-wrapper px-unset"  style="margin-right: -1px;">
+                    <div class="card radius-unset border-1" style="width: 100%; position: relative;">
+                        <img src="assets/images/product-3.jpg" class="card-img-top radius-unset" alt="...">
+                        <span class="material-symbols-outlined add-icon">add</span>
+                        <div class="sizeTable" style="display: none;">
+                            <ul class="size-list">
+                                <li class="size-li" style="margin-right: -1px;"
+                                    onclick="openCartPanel('95 $','assets/images/product-3.jpg','Ürün Başlığı','S')"><a
+                                        href="#">S</a></li>
+                                <li class="size-li"><a href="#"
+                                                       onclick="openCartPanel('95 $','assets/images/product-3.jpg','Ürün Başlığı','M')">M</a>
+                                </li>
+                                <li class="size-li" style="margin-right: -1px;"
+                                    onclick="openCartPanel('95 $','assets/images/product-3.jpg','Ürün Başlığı','L')"><a
+                                        href="#">L</a></li>
+                                <li class="size-li"><a href="#"
+                                                       onclick="openCartPanel('95 $','assets/images/product-3.jpg','Ürün Başlığı','XL')">XL</a>
+                                </li>
+                            </ul>
+                            <ul class="size-standart">
+                                <li>
+                                    BEDEN KILAVUZU
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body"
+                             style="padding-top: 0px; padding-bottom: 25px; font-size: 12px; border-top: 1px solid black;">
+                            <div class="row">
+                                <div class="col-12 d-flex align-items-center justify-content-between">
+                                    <a href="#" class="card-text mr-2 product-title">Ürün Başlık</a>
+                                    <span class="material-symbols-outlined" style="font-size: 20px;">bookmark</span>
+                                </div>
+                                <div class="col-12 d-flex align-items-center justify-content-between">
+                                    <p class="card-text mr-2 product-title">95$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <div class="row text-center text-xs-center text-sm-left text-md-left">
+                <div class="col-xs-12 col-sm-2 col-md-2">
+                    <h5>YARDIM</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="#"><i
+                                class="fa fa-angle-double-right"></i>Home</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>About</a>
+                        </li>
+                        <li><a href="#"><i
+                                class="fa fa-angle-double-right"></i>FAQ</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Get
+                            Started</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Videos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2">
+                    <h5>BİZİ TAKİP EDİN</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="#"><i
+                                class="fa fa-angle-double-right"></i>Home</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>About</a>
+                        </li>
+                        <li><a href="#"><i
+                                class="fa fa-angle-double-right"></i>FAQ</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Get
+                            Started</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Videos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2">
+                    <h5>ŞİRKET</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="#"><i
+                                class="fa fa-angle-double-right"></i>Home</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>About</a>
+                        </li>
+                        <li><a href="#"><i
+                                class="fa fa-angle-double-right"></i>FAQ</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Get
+                            Started</a></li>
+                        <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i
+                                class="fa fa-angle-double-right"></i>Imprint</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2">
+                    <h5>POLİTİKALAR</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="#"><i
+                                class="fa fa-angle-double-right"></i>Home</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>About</a>
+                        </li>
+                        <li><a href="#"><i
+                                class="fa fa-angle-double-right"></i>FAQ</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Get
+                            Started</a></li>
+                        <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i
+                                class="fa fa-angle-double-right"></i>Imprint</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                    <ul class="list-unstyled list-inline social ">
+                        <li class="list-inline-item"><a href="#"><i
+                                class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i
+                                class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i
+                                class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i
+                                class="fa fa-google-plus"></i></a></li>
+                        <li class="list-inline-item"><a href="#" target="_blank"><i
+                                class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2  text-dark">
+                    <p><u><a href="#">NADORA.COM</a></u> Copyright © SALUTEGROUP Tüm hakları saklıdır.</p>
+                    <p class="h6">© All right Reversed.<a class="text-green ml-2" href="#"
+                                                          target="_blank">NADORA.COM</a></p>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </section>
+    <!-- ./Footer -->
+    <section id="chat-container" aria-label="Canlı Destek" class="chat">
+        <div>
+            <div class="tray">
+                <button class="tray__button">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="inherit" stroke="inherit"
+                         class="tray__button-icon" aria-label="_tray-icon_" alt="tray-icon">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M3.7 3.7h16.6v13h-8.14L7.3 20.172V16.7H3.7v-13Zm1 1v11h3.6v2.528l3.54-2.528h7.46v-11H4.7Z"></path>
+                    </svg>
+                    <span class="tray__button-text">CANLI DESTEK</span></button>
+            </div>
+        </div>
+    </section>
+    <div id="cartPanel" class="cart-panel">
+        <span class="close-btn material-symbols-outlined" onclick="toggleCartPanel()">close</span>
+        <h5>SEPETİNİZ</h5>
+        <ul id="cartItems" class="cart-items">
+            <!-- Sepet içeriği buraya eklenecek -->
+        </ul>
+        <button onclick="completePurchase()" class="purchase-btn">Alışverişi Tamamla</button>
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="Ara...">
+        <a href="#" type="button">ARA</a>
+    </div>
+    <!-- Altta sabit duran mobil menü -->
+    <nav class="navbar fixed-bottom navbar-light bg-light d-md-none">
+        <ul class="nav justify-content-around w-100">
+            <li class="nav-item">
+                <a class="nav-link bottom-menu-text" href="#">ANASAYFA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bottom-menu-text" href="#">MENÜ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bottom-menu-text" href="#">HESAP</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bottom-menu-text" href="#">SEPET(0)</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/javascript/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.right-content-img').click(function () {
+                var imgSrc = $(this).attr('src');
+                $('.middle-content-img').attr('src', imgSrc);
+            });
+
+            $('.middle-content-img').click(function () {
+                $(this).toggleClass('enlarged');
+            });
+            $(document).click(function (e) {
+                if (!$(e.target).closest('.middle-content').length && $('.middle-content-img').hasClass('enlarged')) {
+                    $('.middle-content-img').removeClass('enlarged'); // Fotoğrafı küçült
+                }
+            });
+
+
+        });
+    </script>
+    <script>
+        function toggleText() {
+            var moreText = document.getElementById("more-text");
+            var moreBtn = document.getElementById("read-more-btn");
+            var moreIndicator = document.getElementById("more");
+
+            if (moreText.style.display === "none") {
+                moreText.style.display = "block";
+                moreBtn.textContent = "Kısalt";
+                moreIndicator.style.display = "none";
+            } else {
+                moreText.style.display = "none";
+                moreBtn.textContent = "Daha Fazla Oku";
+                moreIndicator.style.display = "inline";
+            }
+        }
+    </script>
+    <script>
+        var addIcons = document.querySelectorAll(".add-icon");
+
+        addIcons.forEach(function (icon) {
+            icon.addEventListener("click", function (event) {
+                var sizeTable = icon.nextElementSibling;
+                if (sizeTable.style.display === "block") {
+                    sizeTable.style.display = "none";
+                    icon.style.display = "inline-block"; // İlgili add ikonunu tekrar göster
+                } else {
+                    sizeTable.style.display = "block";
+                    icon.style.display = "none"; // İlgili add ikonunu gizle
+                }
+                event.stopPropagation(); // Başka bir yere tıklandığında etkinliği durdur
+            });
+        });
+
+        document.addEventListener("click", function (event) {
+            addIcons.forEach(function (icon) {
+                var sizeTable = icon.nextElementSibling;
+                if (event.target !== icon && event.target !== sizeTable) {
+                    sizeTable.style.display = "none";
+                    icon.style.display = "inline-block"; // İlgili add ikonunu tekrar göster
+                }
+            });
+        });
+    </script>
+    <script>
+        function toggleCartPanel() {
+            var cartPanel = document.getElementById("cartPanel");
+            cartPanel.classList.toggle("active");
+        }
+
+        var originalPrices = [];
+        var originalPriceInt;
+        var selectedSize; // Global bir değişken olarak tanımlıyoruz
+        function selectSize(size) {
+            selectedSize = size; // Seçilen bedeni global değişkene atıyoruz
+            console.log("Seçilen beden: " + selectedSize);
+        }
+
+        function openCartPanel(price, img_url, product_name, size) {
+            var cartPanel = document.getElementById("cartPanel");
+            cartPanel.classList.add("active");
+
+            originalPriceInt = parseInt(price);
+            originalPrices.push(originalPriceInt);
+            console.log(originalPrices);
+            var cartItems = document.getElementById("cartItems");
+            var li = document.createElement("li");
+            var quantity = 1; // varsayılan adet
+            li.innerHTML = `
+            <div class="container">
+                <div class="row mx-auto">
+                    <div class="col-12">
+                        <img src="${img_url}" alt="" style="width: 60%; height: auto;"><br>
+                    </div>
+                    <div style="display: flex;
+                                margin: auto; font-size: 12px; margin-top: 10px;">
+                        <span style="margin-top: auto;margin-bottom: auto;" >${product_name} - Beden: ${size} &nbsp;&nbsp;</span>
+                        <span class="quantity-btn minus-btn material-symbols-outlined" onclick="decreaseQuantity(this)">remove</span>
+                        <span id="quantity" style="font-size: 12px; display: block;  text-align: center;">${quantity}</span>
+                        <span class="quantity-btn plus-btn material-symbols-outlined" onclick="increaseQuantity(this)">add</span>
+                        <span class="price" style="margin-top: auto;margin-bottom: auto; margin-left: 5px;">${price}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+            cartItems.appendChild(li);
+        }
+
+        function increaseQuantity(btn) {
+            var liSirasi = btn.closest("li");
+            var ul = liSirasi.parentElement; // li öğesinin bulunduğu ul öğesini al
+            var liIndex = Array.from(ul.children).indexOf(liSirasi);
+            var quantityElement = btn.previousElementSibling;
+
+            var quantity = parseInt(quantityElement.textContent);
+            quantity++;
+            quantityElement.textContent = quantity;
+
+            // Fiyatı güncelle
+            updatePrice(quantityElement.parentElement, liIndex);
+        }
+
+        function decreaseQuantity(btn) {
+            var liSirasi = btn.closest("li");
+            var ul = liSirasi.parentElement; // li öğesinin bulunduğu ul öğesini al
+            var liIndex = Array.from(ul.children).indexOf(liSirasi);
+            var quantityElement = btn.nextElementSibling;
+            var quantity = parseInt(quantityElement.textContent);
+            quantity--;
+            quantity = Math.max(quantity, 0); // Negatif adeti önler
+            quantityElement.textContent = quantity;
+            // Fiyatı güncelle
+            updatePrice(quantityElement.parentElement, liIndex);
+
+            if (quantity === 0) {
+                removeCartItem(btn);
+            }
+        }
+
+        function removeCartItem(btn) {
+            var cartItem = btn.parentElement.parentElement.parentElement.parentElement;
+            cartItem.remove();
+        }
+
+        function updatePrice(cartItem, liIndex) {
+
+            var quantityElement = cartItem.querySelector("#quantity");
+            var priceElement = cartItem.querySelector(".price");
+            var quantity = parseInt(quantityElement.textContent);
+            var price = parseFloat(priceElement.textContent); // Fiyatı al
+            console.log("index sırası: " + liIndex);
+
+            var totalPrice = quantity * originalPrices[liIndex];
+            var lastPrice = totalPrice;
+
+
+            priceElement.textContent = totalPrice.toFixed(2); // Yeni fiyatı güncelle
+        }
+
+        function completePurchase() {
+            // Alışverişi tamamlamak için gereken işlemler burada yapılabilir
+            // Örneğin, sepeti boşaltma, ödeme işlemleri gibi
+            alert("Alışverişiniz tamamlandı!");
+            var cartItems = document.getElementById("cartItems");
+            cartItems.innerHTML = ""; // Sepeti temizle
+            var cartPanel = document.getElementById("cartPanel");
+            cartPanel.classList.remove("active"); // Sepet panelini gizle
+        }
+    </script>
+
+
+    </body>
+</html>

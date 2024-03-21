@@ -1,0 +1,702 @@
+.navbar-brand img {
+    max-height: 70px; /* Logo boyutunu ayarlamak için */
+}
+.navbar-sticky {
+    overflow: hidden;
+    position: fixed; /* Sabit pozisyon */
+    top: 0; /* Sayfanın üstüne sabitle */
+    width: 100%; /* Genişlik */
+    z-index: 1000; /* Diğer öğelerin üstünde görünmesini sağlar */
+}
+.slide {
+    width: 100%;
+    height: 100vh; /* Ekran yüksekliğini kapla */
+    background-color: #f0f0f0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide:nth-child(1) .slide {
+    background-image: url('../images/slider-1-yatay.jpg');
+}
+
+.swiper-slide:nth-child(2) .slide {
+    background-image: url('../images/slider-2-yatay.jpg');
+}
+
+.swiper-slide:nth-child(3) .slide {
+    background-image: url('../images/slider-3-yatay.jpg');
+}
+
+.close-btn {
+    display: none;
+}
+/* Mobil Ekran CSS Başlangıç*/
+@media (max-width: 768px) {
+    #navbarNav {
+        z-index:910;
+    }
+    .swiper-slide:nth-child(1) .slide {
+        background-image: url('../images/slider-1-dikey.jpg');
+        background-size: cover; /* Resmi en azından bir boyutta tamamen kaplayacak şekilde boyutlandırır */
+        background-position: center; /* Resmi ortalamak için */
+
+    }
+
+    .swiper-slide:nth-child(2) .slide {
+        background-image: url('../images/slider-2-dikey.jpg');
+        background-size: cover; /* Resmi en azından bir boyutta tamamen kaplayacak şekilde boyutlandırır */
+        background-position: center; /* Resmi ortalamak için */
+    }
+
+    .swiper-slide:nth-child(3) .slide {
+        background-image: url('../images/slider-3-dikey.jpg');
+        background-size: cover; /* Resmi en azından bir boyutta tamamen kaplayacak şekilde boyutlandırır */
+        background-position: center; /* Resmi ortalamak için */
+    }
+
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Başlangıçta sağda gizli olacak */
+        bottom: 0;
+        width: 100%; /* Sağdan açılan menünün genişliği */
+        background-color: #fff; /* Menü arka plan rengini belirleyin */
+        padding-top: 56px; /* Navbar'ın yüksekliği kadar boşluk bırakır */
+        transition: right 0.3s ease; /* Geçiş efekti ekler */
+        color: black !important;
+    }
+    .close-btn {
+        display: block;
+    }
+
+
+    .navbar-collapse.show {
+        right: 0; /* Menüyü sağa kaydırır, gösterir */
+    }
+    .navbar-nav{
+        margin-left: 20px !important;
+    }
+    .top-menu-category{
+        list-style: none;
+        display: block;
+        margin-right: 20px;
+        border-bottom: 3px solid black;
+        padding-bottom: 5px;
+    }
+
+    .top-menu-category li{
+        display: inline;
+        margin: 5px;
+        position: relative;
+    }
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        font-size: 30px;
+        color: #000;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1100; /* Overlay'in üstünde olmalı */
+    }
+
+    .close-btn:hover {
+        color: #4f4f4f; /* Kapatma butonuna hover durumunda istediğiniz rengi atayabilirsiniz */
+    }
+    .close-btn:focus{
+        outline: none;
+    }
+    .top-search-container{
+        display: none !important;
+    }
+    .search-container {
+        position: fixed;
+        bottom: 90px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 1px;
+        border: 1px solid gray;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 90%;
+
+    }
+    .navbar-toggler:focus{
+        .search-container{
+            z-index: 960;
+        }
+    }
+
+    .search-container input[type="text"] {
+        width: 200px;
+        padding: 5px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+    }
+
+    .search-container a {
+        padding: 5px 10px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        color: black;
+        cursor: pointer;
+        margin-left: 90px;
+    }
+    .cart-panel {
+        width: 100% !important;
+    }
+
+}
+
+/* Mobil Ekran CSS Bitiş*/
+
+
+.swiper-container {
+    width: 100%;
+    height: 100vh; /* Ekran yüksekliğini kapla */
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    overflow: hidden; /* Kaydırma işleminde taşmayı önle */
+}
+
+.swiper-wrapper {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.swiper-slide {
+    width: 100%;
+    height: 100vh; /* Ekran yüksekliğini kapla */
+}
+
+.swiper-slide {
+    perspective: 1200px;
+}
+
+.swiper-slide {
+    transition: transform 0.6s ease;
+}
+
+.swiper-slide.swiper-slide-active {
+    transform: translateZ(0px) scale(1);
+}
+
+.swiper-slide.swiper-slide-next,
+.swiper-slide.swiper-slide-prev {
+    transform: translateZ(-100px) scale(0.8);
+}
+
+.swiper-slide.swiper-slide-next.swiper-slide-active,
+.swiper-slide.swiper-slide-prev.swiper-slide-active {
+    transform: translateZ(0px) scale(0.9);
+}
+.navbar-toggler{
+    border: 1px solid #D3D1D1FF !important;
+}
+.navbar-toggler:focus{
+    outline: none;
+}
+
+.navbar-collapse{
+    justify-content: flex-end;
+    color: white;
+}
+.top-menu-category{
+    list-style: none;
+    display: block;
+    margin-right: 20px;
+
+    padding-bottom: 5px;
+}
+
+.top-menu-category li{
+    display: inline;
+    margin: 5px;
+    position: relative;
+}
+#kadin{
+    text-decoration: none;
+    color: unset;
+}
+#erkek{
+    text-decoration: none;
+    color: unset;
+}
+#kadinAlt{
+    display: none;
+}
+#erkekAlt {
+    display: none;
+}
+#overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Arka plan rengini belirleyin */
+    z-index: 1000; /* Diğer içeriğin üzerinde kalmasını sağlar */
+    display: none; /* Başlangıçta gizlenmiş olacak */
+}
+
+
+
+
+.bottom-menu-text{
+    color: #333333;
+
+}
+.nav-item.active {
+    .bottom-menu-text {
+        text-decoration: underline solid ; /* Aktif olan menü öğesinin altını çizer */
+        color: #1f1f1f;
+        text-underline-position: under;
+    }
+}
+
+.bottom-menu-text:hover {
+    color: #1f1f1f;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+.search-container{
+    display: none;
+}
+.top-search-container {
+    margin-left: 25px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 35%;
+}
+.top-search-container input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.top-search-container a {
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 0px 15px;
+}
+.material-symbols-outlined {
+    line-height: 1.5 !important;
+    font-weight: 300 !important;
+}
+@media (min-width: 768px) {
+    .top-menu-category li {
+        display: inline-block; /* Mobil görünümde alt alta, masaüstü görünümde yan yana olacak */
+        margin: 5px;
+        position: relative;
+    }
+
+    /* Mobil görünümde alt menüler gizli olacak */
+    .top-menu-sub-category{
+        display: none;
+        position: absolute;
+        top: 75%; /* Ana menüden altına doğru açılacak */
+        background-color: rgba(255, 255, 255, 0.69);
+        border: 1px solid #ddd; /* Alt menü çerçeve rengi */
+        padding: 10px;
+        z-index: 1000; /* Ana menüden üstte olacak */
+        width: 325px;
+        right: 3.3%;
+    }
+
+    /* İlgili ana menüye fare imleci geldiğinde alt menüyü göster */
+    #kadin:hover #kadinAlt,
+    #erkek:hover #erkekAlt {
+        display: block !important;
+    }
+
+    /* Alt menülerin içindeki linkleri düzenle */
+    #kadinAlt li,
+    #erkekAlt li {
+        display: block !important;
+    }
+}
+
+/* GENEL CSSLER Başlangıç*/
+.products-wrapper{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 40px;
+    z-index:900;
+}
+.product-title{
+    margin-bottom: 4px;
+    color: inherit;
+}
+
+.product-title:hover {
+    color: inherit; /* Varsayılan rengi koruyacak */
+    text-decoration: none; /* Altı çizgiyi kaldıracak */
+}
+.add-icon{
+    position: absolute;
+    bottom: 15%;
+    transform: translateY(-50%);
+    left: 50%;
+    background-color: rgb(249 249 249 / 64%);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    padding: 0px 6px;
+}
+.sizeTable {
+    position: absolute;
+    bottom: 15%;
+    transform: translateY(-50%);
+    left: 50%;
+    background-color: rgb(249 249 249 / 64%);
+    width: 100%;
+    transform: translateX(-50%);
+    height: auto;
+}
+.size-list{
+    display: flex; flex-wrap: wrap; list-style: none; padding: 0; font-size: 10px;
+}
+.size-li{
+    width: 50%; border: 1px solid black; padding: 5px; margin-bottom: -1px;
+    a{
+        color: inherit; /* Varsayılan rengi koruyacak */
+        text-decoration: none; /* Altı çizgiyi kaldıracak */
+    }
+}
+.size-standart{
+    display: flex; flex-wrap: wrap; list-style: none; padding: 0; font-size: 10px;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 5px;
+}
+.card-wrapper{
+    margin-bottom: 20px;
+}
+
+
+/* SEPET CSSLERİ Başlangıç */
+.cart-panel {
+    position: fixed;
+    background-color: white;
+    height: 100%;
+    width: 30%;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+    overflow-y: auto;
+    padding: 20px;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+
+}
+
+.cart-panel.active {
+    transform: translateX(0%);
+}
+
+.cart-items {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 50px;
+    li{
+        border: 1px solid black;
+        padding: 20px 5px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        .minus-btn {
+            border: 1px solid black;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            padding: 0px 3px;
+        }
+        .plus-btn {
+            border: 1px solid black;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 0px 3px;
+
+        }
+        #quantity {
+            padding: 0px 10px;
+            font-size: 14px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+        .material-symbols-outlined{
+            font-size: 14px;
+        }
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.quantity-btn {
+    cursor: pointer;
+}
+.purchase-btn {
+    background: transparent;
+    border: 1px solid black;
+    width: 100%;
+    padding: 10px;
+}
+.middle-content{
+    border-right: 1px solid black;
+    display: flex;
+    justify-content: right;
+    .middle-content-img{
+        width: 70%;
+    }
+}
+.right-content-img{
+    width: 50%;
+    margin-bottom: 5px;
+}
+
+.middle-content-img {
+    transition: all 0.3s ease-in-out;
+}
+
+.middle-content-img.enlarged {
+    transform: scale(1.2); /* İstediğiniz büyüklüğe göre değeri ayarlayabilirsiniz */
+}
+.left-content{
+    border: 1px solid black;
+    font-size: 12px;
+    padding: 10px;
+}
+.right-content{
+    border: 1px solid black;
+    font-size: 12px;
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.right-content-header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.right-content-product-price{
+    margin: 0;
+    font-size: 10px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+.right-content-body {
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+.right-content-detail {
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+.right-size-table{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding-inline-start: unset;
+    text-align: center !important;
+    margin-bottom: 0px;
+}
+.right-size-list{
+    flex-basis: 48%; /* Her satırda iki tane olacak şekilde ayarlandı */
+    margin-bottom: 10px; /* İsteğe bağlı: Öğeler arasında biraz boşluk bırakır */
+    border: 1px solid black;
+    padding: 0px 10px   ;
+}
+
+/* Genel scroll bar */
+::-webkit-scrollbar {
+    width: 1px; /* Scroll bar genişliği */
+
+}
+
+/* Scroll bar'ın ok işaretleri */
+::-webkit-scrollbar-thumb {
+    background: #1f1f1f; /* Scroll bar rengi */
+    border-radius: 5px; /* Scroll bar köşe yarıçapı */
+
+}
+
+/* Scroll bar'ın yuvarlak kısmı */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Scroll bar yuvarlak kısmının rengi */
+}
+
+.px-unset{
+    padding-left: unset !important;
+    padding-right: unset !important;
+}
+.radius-unset{
+    border-radius: unset;
+}
+.border-1 {
+    border-style: solid; /* Border stilini ayarla */
+    border-width: 0.5px; /* Border kalınlığını ayarla */
+    border-color: #000000; /* Border rengini ayarla */
+    .add-icon{
+        bottom: 25%;
+    }
+}
+
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #1f1f1f;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: #ffffff !important;
+    font-size: 10px;
+}
+#footer h5{
+    padding-left: 10px;
+    border-left: 3px solid #eeeeee;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color: #1f1f1f;
+    font-size: 12px !important;
+}
+#footer a {
+    color: #1f1f1f;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+    padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+    font-size:25px;
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease;
+    transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+    font-size:30px;
+    margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+    color: #1f1f1f;
+}
+#footer ul.social li a:hover{
+    color: #1f1f1f;
+}
+#footer ul.quick-links li{
+    padding: 3px 0;
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease;
+    transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+    padding: 3px 0;
+    margin-left:5px;
+    font-weight:700;
+}
+#footer ul.quick-links li a i{
+    margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
+
+@media (max-width:767px){
+    #footer h5 {
+        padding-left: 0;
+        border-left: transparent;
+        padding-bottom: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+/* CANLI DESTEK CSS BAŞLANGIÇ */
+.chat{
+    transition: z-index 1s step-end;
+}
+
+.tray {
+        bottom: 20px;
+        font-size: 10px;
+        position: fixed;
+        line-height: 16px;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        font-stretch: normal;
+        font-weight: 300;
+    }
+.tray__button {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    min-width: 100px;
+    text-decoration: none;
+    background-color: white;
+    border: solid 1px lightgray;
+    padding: 8px 30px;
+
+}
+[dir] .tray__button {
+    background-color: #fff;
+    border: 1px solid rgb(229 229 229 / 100%);
+    cursor: pointer;
+    padding: 8px 24px;
+    text-align: center;
+}
+.tray__button-text {
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    font-stretch: normal;
+    font-weight: 400;
+}
+.tray {
+    right: 0;
+}
+@media screen and (min-width: 768px){
+    #chat-container {
+        position: relative;
+        z-index: 950;
+    }
+}
+
+
+/* CANLI DESTEK CSS BİTİŞ */
+/* SEPET CSSLERİ Bitiş */
+/* GENEL CSSLER Bitiş*/
